@@ -1,5 +1,10 @@
-def validate(real_value: int = 1, min_val: int | float = 1, max_val: int | float = 1) -> int | float:
+def validate(
+        real_value: int = 1,
+        min_val: int | float = 1,
+        max_val: int | float = 1
+) -> int | float:
     return real_value if min_val <= real_value <= max_val else min_val
+
 
 class Car:
     def __init__(
@@ -21,7 +26,9 @@ class CarWashStation:
             average_rating: float,
             count_of_ratings: int
     ) -> None:
-        self.distance_from_city_center = validate(distance_from_city_center, 1.0, 10.0)
+        self.distance_from_city_center = (
+            validate(distance_from_city_center, 1.0, 10.0)
+        )
         self.clean_power = clean_power
         self.average_rating = validate(average_rating, 1.0, 5.0)
         self.count_of_ratings = count_of_ratings
